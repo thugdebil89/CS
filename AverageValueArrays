@@ -1,0 +1,35 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+        string L = Console.ReadLine();
+
+        // Write an answer using Console.WriteLine()
+        // To debug: Console.Error.WriteLine("Debug messages...");
+        // split the string into an array of integers
+int[] arr = L.Split().Select(int.Parse).ToArray();
+
+// calculate the average
+double average = arr.Average();
+
+// round down the average and get the value at the index
+int index = (int)Math.Floor(average);
+string result = (index >= 0 && index < n) ? arr[index].ToString() : "ERROR";
+
+Console.WriteLine(result);
+
+
+    }
+}
