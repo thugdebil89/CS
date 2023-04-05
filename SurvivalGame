@@ -1,0 +1,51 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution
+{
+    static void Main(string[] args)
+    {
+        int HEALTH = int.Parse(Console.ReadLine());
+        int FOOD = int.Parse(Console.ReadLine());
+        int TIME = int.Parse(Console.ReadLine());
+        string GAMEMODE = Console.ReadLine();
+
+        // Write an answer using Console.WriteLine()
+        // To debug: Console.Error.WriteLine("Debug messages...");
+
+
+    int dailyLoss = 0;
+
+        switch (GAMEMODE)
+        {
+            case "Easy":
+                dailyLoss = 1;
+                break;
+            case "Normal":
+                dailyLoss = 2;
+                break;
+            case "Hardcore":
+                dailyLoss = 3;
+                break;
+        }
+
+        int maxHealth = HEALTH + FOOD * 2 - TIME * dailyLoss;
+
+        if (maxHealth > 0)
+        {
+            Console.WriteLine("True " + maxHealth);
+        }
+        else
+        {
+            Console.WriteLine("False");
+        }
+    }
+}
