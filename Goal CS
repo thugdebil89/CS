@@ -1,0 +1,16 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    int a = int.Parse(Console.ReadLine());
+    int b = int.Parse(Console.ReadLine());
+    int c = int.Parse(Console.ReadLine());
+
+    int totalEarnings = a * 6 * 5 * 4;
+    int totalExpenses = b + c;
+
+    bool canAfford = totalEarnings >= totalExpenses;
+
+    Console.WriteLine(canAfford.ToString().ToLower());
+  }
+}
